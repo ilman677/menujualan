@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAPUKY STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #00f0f0, #ff00f0, #00f0f0, #ff00f0);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .header {
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin: 20px 0 0;
+            background: linear-gradient(-45deg, #ff00f0, #00f0f0, #ff00f0, #00f0f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: neonText 5s ease infinite;
+        }
+        @keyframes neonText {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .menu-tab {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border-radius: 15px 15px 0 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 2;
+        }
+        .menu-tab.active {
+            background-color: white;
+        }
+        .menu-items {
+            display: none;
+            padding: 20px 0;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .menu-items.active {
+            display: block;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .menu-item h2 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #555;
+        }
+        .menu-item p {
+            margin: 5px 0 0;
+            color: #999;
+        }
+        .menu-item div:last-child {
+            text-align: right;
+        }
+        .menu-item div:last-child h2 {
+            color: #333;
+            font-weight: 600;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .background-animation {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            z-index: 0;
+            animation: rotate 10s linear infinite;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .contact {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .contact a {
+            color: #00aaff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact a:hover {
+            color: #0077cc;
+        }
+        .store-image {
+            width: 100%;
+            max-width: 200px;
+            border: 5px solid #00aaff;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .whatsapp-logo {
+            width: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <div class="header">
+            <h1>DIGITAL MARKET</h1>
+        </div>
+        <div class="menu-tabs">
+            <div class="menu-tab active" onclick="showMenu('menu1')">Menu 1</div>
+            <div class="menu-tab" onclick="showMenu('menu2')">Menu 2</div>
+            <div class="menu-tab" onclick="showMenu('menu3')">Menu 3</div>
+        </div>
+        <div id="menu1" class="menu-items active">
+            <div class="menu-item">
+                <div>
+                    <h2>SERVER PANEL 1</h2>
+                    <p>RAM 1GB CPU 40%</p>
+                </div>
+                <div>
+                    <h2>Rp 1,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SERVER PANEL 2</h2>
+                    <p>RAM 2GB CPU 60%</p>
+                </div>
+                <div>
+                    <h2>Rp 2,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SERVER PANEL 3</h2>
+                    <p>RAM 3GB CPU 80%</p>
+                </div>
+                <div>
+                    <h2>Rp 3,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SERVER PANEL 4</h2>
+                    <p>RAM 4GB CPU 100%</p>
+                </div>
+                <div>
+                    <h2>Rp 4,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SERVER PANEL 5</h2>
+                    <p>RAM 5GB CPU 120%</p>
+                </div>
+                <div>
+                    <h2>Rp 5,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SERVER PANEL 6</h2>
+                    <p>RAM 6GB CPU 140%</p>
+                </div>
+                <div>
+                    <h2>Rp 6,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SERVER PANEL 7</h2>
+                    <p>RAM 7GB CPU 160%</p>
+                </div>
+                <div>
+                    <h2>Rp 7,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SERVER PANEL 8</h2>
+                    <p>RAM 8GB CPU 180%</p>
+                </div>
+                <div>
+                    <h2>Rp 8,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SERVER PANEL 9</h2>
+                    <p>RAM 8GB CPU 200%</p>
+                </div>
+                <div>
+                    <h2>Rp 9,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SERVER PANEL 10</h2>
+                    <p>RAM 8GB CPU 220%</p>
+                </div>
+                <div>
+                    <h2>Rp 10,000</h2>
+                </div>
+            </div>
+        </div>
+        <div id="menu2" class="menu-items">
+            <div class="menu-item">
+                <div>
+                    <h2>MURSUNTIK</h2>
+                    <p>bisa suntik all sosmed</p>
+                </div>
+                <div>
+                    <h2>Rp 7,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>MURPUSHKONTAK</h2>
+                    <p>buat nambah viwes</p>
+                </div>
+                <div>
+                    <h2>Rp 8,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>MURLOGO</h2>
+                    <p>bisa buat logo manual</p>
+                </div>
+                <div>
+                    <h2>Rp 7,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>MURLOGO AI</h2>
+                    <p>bisa buat logo secara instan</p>
+                </div>
+                <div>
+                    <h2>Rp 8,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>MURUNBANNED</h2>
+                    <p>bisa buka nomor ke banned</p>
+                </div>
+                <div>
+                    <h2>Rp 10,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>MURBUG</h2>
+                    <p>bisa bikin crash wa orang</p>
+                </div>
+                <div>
+                    <h2>Rp 6,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>JASA RENAME SC</h2>
+                    <p>bisa ubah tampilan</p>
+                </div>
+                <div>
+                    <h2>Rp 5K - 25k</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>JASA INSTALL PANEL</h2>
+                    <p>khusuh di vps</p>
+                </div>
+                <div>
+                    <h2>Rp 10,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>RESELLER PANEL</h2>
+                    <p>buat juakan panel</p>
+                </div>
+                <div>
+                    <h2>Rp 5,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SUBDOMAIN</h2>
+                    <p>domain buat web</p>
+                </div>
+                <div>
+                    <h2>Rp 5,000</h2>
+                </div>
+            </div>
+        </div>
+        <div id="menu3" class="menu-items">
+            <div class="menu-item">
+                <div>
+                    <h2>SCRIPT BUG</h2>
+                    <p>cocok buat bug</p>
+                </div>
+                <div>
+                    <h2>Rp 10,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SCRIPT MD</h2>
+                    <p>banyak fitur</p>
+                </div>
+                <div>
+                    <h2>Rp 10,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SCRIPT STORE</h2>
+                    <p>cocok buat jualan</p>
+                </div>
+                <div>
+                    <h2>Rp 10,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SC SUBDOMAIN</h2>
+                    <p>buat subdo atau reseller</p>
+                </div>
+                <div>
+                    <h2>Rp 20,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SCRIPT CPANEL</h2>
+                    <p>cocok buat panel</p>
+                </div>
+                <div>
+                    <h2>Rp 15,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SCRIPT SUBDO × PANEL</h2>
+                    <p>ada dua fitur</p>
+                </div>
+                <div>
+                    <h2>Rp 30,000</h2>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h2>SC PUSHKONTAK</h2>
+                    <p>buat push</p>
+                </div>
+                <div>
+                    <h2>Rp 5,000</h2>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+            <p>Hubungi kami di WhatsApp:</p>
+            <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-logo"><a href="https://wa.me/6281234567890">+27683051608</a></p>
+            <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-logo"><a href="https://wa.me/6280987654321">+6282312934025</a></p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 ILMAN STORE. All rights reserved.</p>
+        </div>
+    </div>
+    <script>
+        function showMenu(menuId) {
+            // Hide all menu items
+            let menuItems = document.querySelectorAll('.menu-items');
+            menuItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Deactivate all tabs
+            let menuTabs = document.querySelectorAll('.menu-tab');
+            menuTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Activate the selected menu
+            document.getElementById(menuId).classList.add('active');
+
+            // Activate the corresponding tab
+            let activeTab = document.querySelector(`.menu-tab[onclick="showMenu('${menuId}')"]`);
+            activeTab.classList.add('active');
+        }
+    </script>
+</body>
+</html>
